@@ -17,12 +17,14 @@ import { FaTrainSubway } from "react-icons/fa6";
 import { MdSecurity } from "react-icons/md";
 import { TbNetwork } from "react-icons/tb";
 
+const MC_ADDRESS = "mc.shoghisimon.ca";
+
 function App() {
   const [copiedAddress, setCopiedAddress] = useState(false);
 
   const copyServerAddress = async () => {
     try {
-      await navigator.clipboard.writeText("mc.shoghisimon.ca");
+      await navigator.clipboard.writeText(MC_ADDRESS);
       setCopiedAddress(true);
       setTimeout(() => setCopiedAddress(false), 2000);
     } catch (err) {
@@ -81,22 +83,14 @@ function App() {
             <h3 className="text-white font-semibold mb-2">Server Address</h3>
             <div className="flex items-center gap-2">
               <code className="text-emerald-300 font-mono text-sm bg-black/30 px-3 py-1 rounded">
-                mc.shoghisimon.ca
+                {copiedAddress ? "Copied to clipboard!" : MC_ADDRESS}
               </code>
               <button
                 onClick={copyServerAddress}
-                className="text-gray-400 group-hover:text-emerald-400 transition-colors relative"
+                className="text-gray-400 group-hover:text-emerald-400 transition-colors"
                 title="Copy to clipboard"
               >
                 <FaCopy className="w-4 h-4" />
-                {copiedAddress && (
-                  <div
-                    className="text-emerald-400 absolute bottom-full p-2 mb-2 bg-black/20 rounded-md w-max right-0 text-sm mt-2 animate-fade-in"
-                    style={{ translate: "50%" }}
-                  >
-                    Copied to clipboard!
-                  </div>
-                )}
               </button>
             </div>
           </div>
@@ -335,16 +329,6 @@ function App() {
           </p>
         </div>
       </footer>
-
-      <style>{`
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.3s ease-out;
-        }
-      `}</style>
     </div>
   );
 }
