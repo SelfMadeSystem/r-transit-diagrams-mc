@@ -296,7 +296,7 @@ function App() {
             <div className="flex gap-4 justify-center">
               <a
                 href="https://discord.gg/J5bhVWTEm9"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
