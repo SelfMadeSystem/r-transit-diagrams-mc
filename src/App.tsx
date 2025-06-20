@@ -304,6 +304,24 @@ function App() {
                 Join Discord
               </a>
               <a
+                href="https://mapmc.shoghisimon.ca/"
+                className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMap className="w-5 h-5 mr-2" />
+                Dynmap
+              </a>
+              <a
+                href="https://railmc.shoghisimon.ca/"
+                className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaTrainSubway className="w-5 h-5 mr-2" />
+                Track Map
+              </a>
+              <a
                 href="https://reddit.com/r/transitdiagrams"
                 className="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
                 target="_blank"
