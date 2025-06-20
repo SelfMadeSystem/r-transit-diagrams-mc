@@ -1,27 +1,32 @@
-import { useState } from 'react';
-import { 
-  FaServer, 
-  FaUsers, 
-  FaDownload, 
-  FaCommentAlt, 
-  FaShieldAlt, 
-  FaCheckCircle, 
+import { useState } from "react";
+import {
+  FaServer,
+  FaUsers,
+  FaDownload,
+  FaCommentAlt,
+  FaShieldAlt,
+  FaCheckCircle,
   FaTimesCircle,
   FaCopy,
   FaExternalLinkAlt,
-  FaGamepad
-} from 'react-icons/fa';
+  FaUserFriends,
+  FaBuilding,
+  FaMap,
+} from "react-icons/fa";
+import { FaTrainSubway } from "react-icons/fa6";
+import { MdSecurity } from "react-icons/md";
+import { TbNetwork } from "react-icons/tb";
 
 function App() {
   const [copiedAddress, setCopiedAddress] = useState(false);
 
   const copyServerAddress = async () => {
     try {
-      await navigator.clipboard.writeText('mc.shoghisimon.ca');
+      await navigator.clipboard.writeText("mc.shoghisimon.ca");
       setCopiedAddress(true);
       setTimeout(() => setCopiedAddress(false), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
@@ -31,17 +36,17 @@ function App() {
       <div className="relative overflow-hidden">
         {/* Background Image Placeholder */}
         <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/minecraft-server-hero.jpg)', // Provide: Epic Minecraft landscape/builds
-            filter: 'blur(1px)'
+            backgroundImage: "url(/minecraft-server-hero.png)", // Provide: Epic Minecraft landscape/builds
+            filter: "blur(1px)",
           }}
         ></div>
-        
+
         <div className="relative z-20 container mx-auto px-4 py-20 text-center">
           <div className="flex items-center justify-center mb-6">
-            <FaGamepad className="w-12 h-12 text-emerald-400 mr-4" />
+            <FaTrainSubway className="w-12 h-12 text-emerald-400 mr-4" />
             <h1 className="text-5xl md:text-7xl font-bold text-white">
               r/TransitDiagrams
             </h1>
@@ -50,16 +55,16 @@ function App() {
             Minecraft Server
           </h2>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            Welcome to the unofficial Minecraft server for the{' '}
+            Build the future of transportation in Minecraft! Join{" "}
             <a
-              href="https://reddit.com/r/transitdiagrams"
+              href="https://discord.gg/J5bhVWTEm9"
               className="text-emerald-400 hover:text-emerald-300 underline transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
-              r/transitdiagrams
-            </a>{' '}
-            community! Join us for a unique experience where we build and explore transit-themed worlds.
+              our community
+            </a>{" "}
+            of transit enthusiasts
           </p>
         </div>
       </div>
@@ -68,7 +73,10 @@ function App() {
       <div className="container mx-auto px-4 py-16 -mt-10 relative z-30">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {/* Server Address Card */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <div
+            onClick={copyServerAddress}
+            className="group bg-white/10 backdrop-blur-lg cursor-pointer rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+          >
             <FaServer className="w-8 h-8 text-emerald-400 mb-4" />
             <h3 className="text-white font-semibold mb-2">Server Address</h3>
             <div className="flex items-center gap-2">
@@ -77,17 +85,20 @@ function App() {
               </code>
               <button
                 onClick={copyServerAddress}
-                className="text-gray-400 hover:text-emerald-400 transition-colors"
+                className="text-gray-400 group-hover:text-emerald-400 transition-colors relative"
                 title="Copy to clipboard"
               >
                 <FaCopy className="w-4 h-4" />
+                {copiedAddress && (
+                  <div
+                    className="text-emerald-400 absolute bottom-full p-2 mb-2 bg-black/20 rounded-md w-max right-0 text-sm mt-2 animate-fade-in"
+                    style={{ translate: "50%" }}
+                  >
+                    Copied to clipboard!
+                  </div>
+                )}
               </button>
             </div>
-            {copiedAddress && (
-              <p className="text-emerald-400 text-sm mt-2 animate-fade-in">
-                Copied to clipboard!
-              </p>
-            )}
           </div>
 
           {/* Version Card */}
@@ -100,67 +111,102 @@ function App() {
           </div>
 
           {/* Discord Card */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <a
+            href="https://discord.gg/J5bhVWTEm9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+          >
             <FaCommentAlt className="w-8 h-8 text-emerald-400 mb-4" />
             <h3 className="text-white font-semibold mb-2">Discord Server</h3>
-            <a
-              href="https://discord.gg/J5bhVWTEm9"
-              className="inline-flex items-center text-emerald-300 hover:text-emerald-200 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <div className="inline-flex items-center text-emerald-300 group-hover:text-emerald-200 transition-colors">
               Join Community
               <FaExternalLinkAlt className="w-4 h-4 ml-2" />
-            </a>
-          </div>
+            </div>
+          </a>
 
           {/* Mods Card */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+          <a
+            href="/mods.tar.gz"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="bg-white/10 group cursor-pointer backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+          >
             <FaDownload className="w-8 h-8 text-emerald-400 mb-4" />
             <h3 className="text-white font-semibold mb-2">Mod Pack</h3>
-            <a
-              href="/mods.tar.gz"
-              className="inline-flex items-center text-emerald-300 hover:text-emerald-200 transition-colors"
-            >
+            <div className="inline-flex items-center bg-emerald-300 group-hover:bg-emerald-200 p-2 rounded-md transition-colors">
               Download Mods
               <FaExternalLinkAlt className="w-4 h-4 ml-2" />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         {/* Features Section */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center">
-            <div 
-              className="w-full h-48 rounded-2xl bg-cover bg-center mb-6 border-4 border-emerald-400/30"
-              style={{ backgroundImage: 'url(/minecraft-transit-builds.jpg)' }} // Provide: Transit-themed Minecraft builds
-            ></div>
-            <h3 className="text-2xl font-bold text-white mb-4">Transit Builds</h3>
-            <p className="text-gray-300">
-              Create amazing transit systems, from subway networks to bus rapid transit and everything in between.
-            </p>
+        <div className="mb-16 mx-auto flex flex-col md:flex-row w-full justify-center gap-8">
+          {/* What We Build Section */}
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-8">
+              <FaBuilding className="inline-block text-emerald-400 mr-3" />
+              What We Build
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="text-center">
+                <div
+                  className="w-full h-48 aspect-square rounded-2xl bg-cover bg-center mb-4 border-4 border-emerald-400"
+                  style={{
+                    backgroundImage: "url(/minecraft-train-stations.png)",
+                  }}
+                ></div>
+                <h3 className="text-xl font-bold text-white">Train Stations</h3>
+              </div>
+
+              <div className="text-center">
+                <div
+                  className="w-full h-48 aspect-square rounded-2xl bg-cover bg-center mb-4 border-4 border-emerald-400"
+                  style={{
+                    backgroundImage: "url(/minecraft-subway-systems.png)",
+                  }}
+                ></div>
+                <h3 className="text-xl font-bold text-white">Subway Systems</h3>
+              </div>
+            </div>
           </div>
 
-          <div className="text-center">
-            <div 
-              className="w-full h-48 rounded-2xl bg-cover bg-center mb-6 border-4 border-emerald-400/30"
-              style={{ backgroundImage: 'url(/minecraft-community-builds.jpg)' }} // Provide: Community building together
-            ></div>
-            <h3 className="text-2xl font-bold text-white mb-4">Community Builds</h3>
-            <p className="text-gray-300">
-              Collaborate with fellow transit enthusiasts to build massive, interconnected transportation networks.
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div 
-              className="w-full h-48 rounded-2xl bg-cover bg-center mb-6 border-4 border-emerald-400/30"
-              style={{ backgroundImage: 'url(/minecraft-creative-world.jpg)' }} // Provide: Creative mode builds
-            ></div>
-            <h3 className="text-2xl font-bold text-white mb-4">Creative Freedom</h3>
-            <p className="text-gray-300">
-              Express your creativity with unlimited resources and space to build your dream transit projects.
-            </p>
+          {/* Server Features Section */}
+          <div>
+            <h2 className="text-3xl font-bold text-white px-8 mb-8">
+              <FaMap className="inline-block text-emerald-400 mr-3" />
+              Features
+            </h2>
+            <div className="backdrop-blur-lg rounded-2xl p-8 max-w-3xl mx-auto">
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <FaTrainSubway className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-200 text-lg">
+                    Transit-focused building themes
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <FaUserFriends className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-200 text-lg">
+                    Collaborative community projects
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <TbNetwork className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-200 text-lg">
+                    Realistic transportation networks
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <MdSecurity className="w-5 h-5 text-red-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-200 text-lg">
+                    Grief protection and fair play
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -178,7 +224,7 @@ function App() {
                 "No griefing or stealing",
                 "Keep chat family-friendly",
                 "Follow moderator instructions",
-                "Have fun and be creative!"
+                "Have fun and be creative!",
               ].map((rule, index) => (
                 <li key={index} className="flex items-start">
                   <FaCheckCircle className="w-5 h-5 text-emerald-400 mr-3 mt-0.5 flex-shrink-0" />
@@ -195,17 +241,15 @@ function App() {
               <h3 className="text-2xl font-bold text-white">Disallowed Mods</h3>
             </div>
             <p className="text-gray-300 mb-4">
-              Mods that provide unfair advantages are not allowed. We want to ensure a fair experience for all players.
+              Hacked clients are never allowed.
             </p>
             <div className="space-y-2">
               {[
                 "X-Ray/ESP mods",
-                "Auto-fishing/mining",
                 "Kill Aura/Aimbot",
-                "Speed hacks",
-                "Fly mods",
+                "Speed/Fly hacks",
                 "Auto-clickers",
-                "Baritone pathfinding"
+                "Automation (Baritone)",
               ].map((mod, index) => (
                 <div key={index} className="flex items-center">
                   <FaTimesCircle className="w-4 h-4 text-red-400 mr-2 flex-shrink-0" />
@@ -222,17 +266,15 @@ function App() {
               <h3 className="text-2xl font-bold text-white">Allowed Mods</h3>
             </div>
             <p className="text-gray-300 mb-4">
-              All mods in our mod pack are allowed, plus these additional categories:
+              All mods in our mod pack are allowed.
             </p>
             <div className="space-y-2">
               {[
-                "Optimization mods (Sodium, Lithium)",
-                "Zoom mods (OkZoomer)",
-                "Replay mods",
-                "World download mods",
-                "Mini-map mods (JourneyMap)",
-                "Visual enhancement mods",
-                "Shader packs"
+                "Optimization (Sodium, Lithium)",
+                "Zoom (OkZoomer)",
+                "Replay/World download",
+                "Mini-map (JourneyMap, Xaero's)",
+                "Visual enhancement (shaders)",
               ].map((mod, index) => (
                 <div key={index} className="flex items-center">
                   <FaCheckCircle className="w-4 h-4 text-emerald-400 mr-2 flex-shrink-0" />
@@ -248,11 +290,14 @@ function App() {
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 inline-block">
             <div className="flex items-center justify-center mb-4">
               <FaUsers className="w-8 h-8 text-emerald-400 mr-3" />
-              <h3 className="text-2xl font-bold text-white">Join Our Community</h3>
+              <h3 className="text-2xl font-bold text-white">
+                Join Our Community
+              </h3>
             </div>
             <p className="text-gray-300 mb-6 max-w-2xl">
-              Connect with transit enthusiasts, share your builds, and collaborate on amazing projects. 
-              Our community is always growing and welcoming new members!
+              Connect with transit enthusiasts, share your builds, and
+              collaborate on amazing projects. Our community is always growing
+              and welcoming new members!
             </p>
             <div className="flex gap-4 justify-center">
               <a
@@ -282,15 +327,16 @@ function App() {
       <footer className="bg-black/50 py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">
-            &copy; 2024 r/TransitDiagrams Minecraft Server. Not affiliated with Mojang Studios.
+            &copy; 2025 r/TransitDiagrams Minecraft Server. Not affiliated with
+            Mojang Studios.
           </p>
         </div>
       </footer>
 
       <style>{`
         @keyframes fade-in {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
         .animate-fade-in {
           animation: fade-in 0.3s ease-out;
