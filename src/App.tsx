@@ -327,8 +327,11 @@ function App() {
       <footer className="bg-black/50 py-8 mt-16">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">
-            &copy; 2025 r/TransitDiagrams Minecraft Server. Not affiliated with
-            Mojang Studios.
+            Building the future of transportation, one block at a time.
+            <br />
+            © {new Date().getFullYear()} r/TransitDiagrams Minecraft Server.
+            <br />
+            Not affiliated with Mojang AB or Minecraft. All rights reserved.
           </p>
         </div>
       </footer>
