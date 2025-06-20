@@ -322,8 +322,8 @@ function App() {
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">
             Building the future of transportation, one block at a time.
-            <br />
-            © {new Date().getFullYear()} r/TransitDiagrams Minecraft Server.
+            <br />© {new Date().getFullYear()} r/TransitDiagrams Minecraft
+            Server.
             <br />
             Not affiliated with Mojang AB or Minecraft. All rights reserved.
           </p>
