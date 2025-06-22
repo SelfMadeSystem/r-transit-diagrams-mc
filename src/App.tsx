@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900">
+    <div className="min-h-screen bg-linear-to-br from-gray-900 via-gray-800 to-emerald-900">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         {/* Background Image Placeholder */}
@@ -176,25 +176,25 @@ function App() {
             <div className="mx-auto max-w-3xl rounded-2xl p-8 backdrop-blur-lg">
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <FaTrainSubway className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-blue-400" />
+                  <FaTrainSubway className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
                   <span className="text-lg text-gray-200">
                     Transit-focused building themes
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <FaUserFriends className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
+                  <FaUserFriends className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-green-400" />
                   <span className="text-lg text-gray-200">
                     Collaborative community projects
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <TbNetwork className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-purple-400" />
+                  <TbNetwork className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-purple-400" />
                   <span className="text-lg text-gray-200">
                     Realistic transportation networks
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <MdSecurity className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-red-400" />
+                  <MdSecurity className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-red-400" />
                   <span className="text-lg text-gray-200">
                     Grief protection and fair play
                   </span>
@@ -221,7 +221,7 @@ function App() {
                 "Have fun and be creative!",
               ].map((rule, index) => (
                 <li key={index} className="flex items-start">
-                  <FaCheckCircle className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-400" />
+                  <FaCheckCircle className="mr-3 mt-0.5 h-5 w-5 shrink-0 text-emerald-400" />
                   <span className="text-gray-200">{rule}</span>
                 </li>
               ))}
@@ -246,7 +246,7 @@ function App() {
                 "Automation (Baritone)",
               ].map((mod, index) => (
                 <div key={index} className="flex items-center">
-                  <FaTimesCircle className="mr-2 h-4 w-4 flex-shrink-0 text-red-400" />
+                  <FaTimesCircle className="mr-2 h-4 w-4 shrink-0 text-red-400" />
                   <span className="text-sm text-gray-300">{mod}</span>
                 </div>
               ))}
@@ -271,7 +271,7 @@ function App() {
                 "Visual enhancement (shaders)",
               ].map((mod, index) => (
                 <div key={index} className="flex items-center">
-                  <FaCheckCircle className="mr-2 h-4 w-4 flex-shrink-0 text-emerald-400" />
+                  <FaCheckCircle className="mr-2 h-4 w-4 shrink-0 text-emerald-400" />
                   <span className="text-sm text-gray-300">{mod}</span>
                 </div>
               ))}
