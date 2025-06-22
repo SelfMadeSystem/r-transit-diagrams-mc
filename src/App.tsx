@@ -37,7 +37,7 @@ function App() {
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         {/* Background Image Placeholder */}
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="absolute inset-0 z-10 bg-black/50"></div>
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -46,21 +46,21 @@ function App() {
           }}
         ></div>
 
-        <div className="relative z-20 container mx-auto px-4 py-20 text-center">
-          <div className="flex items-center justify-center mb-6">
-            <FaTrainSubway className="w-12 h-12 text-emerald-400 mr-4" />
-            <h1 className="text-5xl md:text-7xl font-bold text-white">
+        <div className="container relative z-20 mx-auto px-4 py-20 text-center">
+          <div className="mb-6 flex items-center justify-center">
+            <FaTrainSubway className="mr-4 h-12 w-12 text-emerald-400" />
+            <h1 className="text-5xl font-bold text-white md:text-7xl">
               r/TransitDiagrams
             </h1>
           </div>
-          <h2 className="text-2xl md:text-3xl text-emerald-300 mb-8">
+          <h2 className="mb-8 text-2xl text-emerald-300 md:text-3xl">
             Minecraft Server
           </h2>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-200 md:text-2xl">
             Build the future of transportation in Minecraft! Join{" "}
             <a
               href="https://discord.gg/J5bhVWTEm9"
-              className="text-emerald-400 hover:text-emerald-300 underline transition-colors"
+              className="text-emerald-400 underline transition-colors hover:text-emerald-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -72,34 +72,34 @@ function App() {
       </div>
 
       {/* Server Info Cards */}
-      <div className="container mx-auto px-4 py-16 -mt-10 relative z-30">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div className="container relative z-30 mx-auto -mt-10 px-4 py-16">
+        <div className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {/* Server Address Card */}
           <div
             onClick={copyServerAddress}
-            className="group bg-white/10 backdrop-blur-lg cursor-pointer rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+            className="group cursor-pointer rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:bg-white/15"
           >
-            <FaServer className="w-8 h-8 text-emerald-400 mb-4" />
-            <h3 className="text-white font-semibold mb-2">Server Address</h3>
+            <FaServer className="mb-4 h-8 w-8 text-emerald-400" />
+            <h3 className="mb-2 font-semibold text-white">Server Address</h3>
             <div className="flex items-center gap-2">
-              <code className="text-emerald-300 font-mono text-sm bg-black/30 px-3 py-1 rounded">
+              <code className="rounded bg-black/30 px-3 py-1 font-mono text-sm text-emerald-300">
                 {copiedAddress ? "Copied to clipboard!" : MC_ADDRESS}
               </code>
               <button
                 onClick={copyServerAddress}
-                className="text-gray-400 group-hover:text-emerald-400 transition-colors"
+                className="text-gray-400 transition-colors group-hover:text-emerald-400"
                 title="Copy to clipboard"
               >
-                <FaCopy className="w-4 h-4" />
+                <FaCopy className="h-4 w-4" />
               </button>
             </div>
           </div>
 
           {/* Version Card */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-            <FaCheckCircle className="w-8 h-8 text-emerald-400 mb-4" />
-            <h3 className="text-white font-semibold mb-2">Server Version</h3>
-            <code className="text-emerald-300 font-mono text-sm bg-black/30 px-3 py-1 rounded">
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:bg-white/15">
+            <FaCheckCircle className="mb-4 h-8 w-8 text-emerald-400" />
+            <h3 className="mb-2 font-semibold text-white">Server Version</h3>
+            <code className="rounded bg-black/30 px-3 py-1 font-mono text-sm text-emerald-300">
               Forge 1.20.1
             </code>
           </div>
@@ -109,13 +109,13 @@ function App() {
             href="https://discord.gg/J5bhVWTEm9"
             target="_blank"
             rel="noopener noreferrer"
-            className="group bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+            className="group rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:bg-white/15"
           >
-            <FaCommentAlt className="w-8 h-8 text-emerald-400 mb-4" />
-            <h3 className="text-white font-semibold mb-2">Discord Server</h3>
-            <div className="inline-flex items-center text-emerald-300 group-hover:text-emerald-200 transition-colors">
+            <FaCommentAlt className="mb-4 h-8 w-8 text-emerald-400" />
+            <h3 className="mb-2 font-semibold text-white">Discord Server</h3>
+            <div className="inline-flex items-center text-emerald-300 transition-colors group-hover:text-emerald-200">
               Join Community
-              <FaExternalLinkAlt className="w-4 h-4 ml-2" />
+              <FaExternalLinkAlt className="ml-2 h-4 w-4" />
             </div>
           </a>
 
@@ -125,29 +125,29 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
             download
-            className="bg-white/10 group cursor-pointer backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105"
+            className="group cursor-pointer rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:bg-white/15"
           >
-            <FaDownload className="w-8 h-8 text-emerald-400 mb-4" />
-            <h3 className="text-white font-semibold mb-2">Mod Pack</h3>
-            <div className="inline-flex items-center bg-emerald-300 group-hover:bg-emerald-200 p-2 rounded-md transition-colors">
+            <FaDownload className="mb-4 h-8 w-8 text-emerald-400" />
+            <h3 className="mb-2 font-semibold text-white">Mod Pack</h3>
+            <div className="inline-flex items-center rounded-md bg-emerald-300 p-2 transition-colors group-hover:bg-emerald-200">
               Download Mods
-              <FaExternalLinkAlt className="w-4 h-4 ml-2" />
+              <FaExternalLinkAlt className="ml-2 h-4 w-4" />
             </div>
           </a>
         </div>
 
         {/* Features Section */}
-        <div className="mb-16 mx-auto flex flex-col md:flex-row w-full justify-center gap-8">
+        <div className="mx-auto mb-16 flex w-full flex-col justify-center gap-8 md:flex-row">
           {/* What We Build Section */}
           <div>
-            <h2 className="text-3xl font-bold text-white mb-8">
-              <FaBuilding className="inline-block text-emerald-400 mr-3" />
+            <h2 className="mb-8 text-3xl font-bold text-white">
+              <FaBuilding className="mr-3 inline-block text-emerald-400" />
               What We Build
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-8 md:grid-cols-2">
               <div className="text-center">
                 <div
-                  className="w-full h-48 aspect-square rounded-2xl bg-cover bg-center mb-4 border-4 border-emerald-400"
+                  className="mb-4 aspect-square h-48 w-full rounded-2xl border-4 border-emerald-400 bg-cover bg-center"
                   style={{
                     backgroundImage: "url(/minecraft-train-stations.png)",
                   }}
@@ -157,7 +157,7 @@ function App() {
 
               <div className="text-center">
                 <div
-                  className="w-full h-48 aspect-square rounded-2xl bg-cover bg-center mb-4 border-4 border-emerald-400"
+                  className="mb-4 aspect-square h-48 w-full rounded-2xl border-4 border-emerald-400 bg-cover bg-center"
                   style={{
                     backgroundImage: "url(/minecraft-subway-systems.png)",
                   }}
@@ -169,33 +169,33 @@ function App() {
 
           {/* Server Features Section */}
           <div>
-            <h2 className="text-3xl font-bold text-white px-8 mb-8">
-              <FaMap className="inline-block text-emerald-400 mr-3" />
+            <h2 className="mb-8 px-8 text-3xl font-bold text-white">
+              <FaMap className="mr-3 inline-block text-emerald-400" />
               Features
             </h2>
-            <div className="backdrop-blur-lg rounded-2xl p-8 max-w-3xl mx-auto">
+            <div className="mx-auto max-w-3xl rounded-2xl p-8 backdrop-blur-lg">
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <FaTrainSubway className="w-5 h-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-lg">
+                  <FaTrainSubway className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-blue-400" />
+                  <span className="text-lg text-gray-200">
                     Transit-focused building themes
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <FaUserFriends className="w-5 h-5 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-lg">
+                  <FaUserFriends className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-green-400" />
+                  <span className="text-lg text-gray-200">
                     Collaborative community projects
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <TbNetwork className="w-5 h-5 text-purple-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-lg">
+                  <TbNetwork className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-purple-400" />
+                  <span className="text-lg text-gray-200">
                     Realistic transportation networks
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <MdSecurity className="w-5 h-5 text-red-400 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-200 text-lg">
+                  <MdSecurity className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-red-400" />
+                  <span className="text-lg text-gray-200">
                     Grief protection and fair play
                   </span>
                 </li>
@@ -205,11 +205,11 @@ function App() {
         </div>
 
         {/* Rules and Info Sections */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 lg:grid-cols-3">
           {/* Server Rules */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-            <div className="flex items-center mb-6">
-              <FaShieldAlt className="w-8 h-8 text-emerald-400 mr-3" />
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-lg">
+            <div className="mb-6 flex items-center">
+              <FaShieldAlt className="mr-3 h-8 w-8 text-emerald-400" />
               <h3 className="text-2xl font-bold text-white">Server Rules</h3>
             </div>
             <ul className="space-y-3">
@@ -221,7 +221,7 @@ function App() {
                 "Have fun and be creative!",
               ].map((rule, index) => (
                 <li key={index} className="flex items-start">
-                  <FaCheckCircle className="w-5 h-5 text-emerald-400 mr-3 mt-0.5 flex-shrink-0" />
+                  <FaCheckCircle className="mr-3 mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-400" />
                   <span className="text-gray-200">{rule}</span>
                 </li>
               ))}
@@ -229,12 +229,12 @@ function App() {
           </div>
 
           {/* Disallowed Mods */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-            <div className="flex items-center mb-6">
-              <FaTimesCircle className="w-8 h-8 text-red-400 mr-3" />
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-lg">
+            <div className="mb-6 flex items-center">
+              <FaTimesCircle className="mr-3 h-8 w-8 text-red-400" />
               <h3 className="text-2xl font-bold text-white">Disallowed Mods</h3>
             </div>
-            <p className="text-gray-300 mb-4">
+            <p className="mb-4 text-gray-300">
               Hacked clients are never allowed.
             </p>
             <div className="space-y-2">
@@ -246,20 +246,20 @@ function App() {
                 "Automation (Baritone)",
               ].map((mod, index) => (
                 <div key={index} className="flex items-center">
-                  <FaTimesCircle className="w-4 h-4 text-red-400 mr-2 flex-shrink-0" />
-                  <span className="text-gray-300 text-sm">{mod}</span>
+                  <FaTimesCircle className="mr-2 h-4 w-4 flex-shrink-0 text-red-400" />
+                  <span className="text-sm text-gray-300">{mod}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Allowed Mods */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-            <div className="flex items-center mb-6">
-              <FaCheckCircle className="w-8 h-8 text-emerald-400 mr-3" />
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-lg">
+            <div className="mb-6 flex items-center">
+              <FaCheckCircle className="mr-3 h-8 w-8 text-emerald-400" />
               <h3 className="text-2xl font-bold text-white">Allowed Mods</h3>
             </div>
-            <p className="text-gray-300 mb-4">
+            <p className="mb-4 text-gray-300">
               All mods in our mod pack are allowed.
             </p>
             <div className="space-y-2">
@@ -271,8 +271,8 @@ function App() {
                 "Visual enhancement (shaders)",
               ].map((mod, index) => (
                 <div key={index} className="flex items-center">
-                  <FaCheckCircle className="w-4 h-4 text-emerald-400 mr-2 flex-shrink-0" />
-                  <span className="text-gray-300 text-sm">{mod}</span>
+                  <FaCheckCircle className="mr-2 h-4 w-4 flex-shrink-0 text-emerald-400" />
+                  <span className="text-sm text-gray-300">{mod}</span>
                 </div>
               ))}
             </div>
@@ -281,53 +281,53 @@ function App() {
 
         {/* Community Stats */}
         <div className="mt-16 text-center">
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 inline-block">
-            <div className="flex items-center justify-center mb-4">
-              <FaUsers className="w-8 h-8 text-emerald-400 mr-3" />
+          <div className="inline-block rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-lg">
+            <div className="mb-4 flex items-center justify-center">
+              <FaUsers className="mr-3 h-8 w-8 text-emerald-400" />
               <h3 className="text-2xl font-bold text-white">
                 Join Our Community
               </h3>
             </div>
-            <p className="text-gray-300 mb-6 max-w-2xl">
+            <p className="mb-6 max-w-2xl text-gray-300">
               Connect with transit enthusiasts, share your builds, and
               collaborate on amazing projects. Our community is always growing
               and welcoming new members!
             </p>
-            <div className="flex gap-4 justify-center flex-wrap">
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="https://discord.gg/J5bhVWTEm9"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
+                className="inline-flex items-center rounded-xl bg-emerald-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-emerald-500"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaCommentAlt className="w-5 h-5 mr-2" />
+                <FaCommentAlt className="mr-2 h-5 w-5" />
                 Join Discord
               </a>
               <a
                 href="https://mapmc.shoghisimon.ca/"
-                className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
+                className="inline-flex items-center rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-blue-500"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaMap className="w-5 h-5 mr-2" />
+                <FaMap className="mr-2 h-5 w-5" />
                 Dynmap
               </a>
               <a
                 href="https://railmc.shoghisimon.ca/"
-                className="bg-purple-600 hover:bg-purple-500 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
+                className="inline-flex items-center rounded-xl bg-purple-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-purple-500"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaTrainSubway className="w-5 h-5 mr-2" />
+                <FaTrainSubway className="mr-2 h-5 w-5" />
                 Track Map
               </a>
               <a
                 href="https://reddit.com/r/transitdiagrams"
-                className="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
+                className="inline-flex items-center rounded-xl bg-white/20 px-8 py-3 font-semibold text-white transition-colors hover:bg-white/30"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaExternalLinkAlt className="w-5 h-5 mr-2" />
+                <FaExternalLinkAlt className="mr-2 h-5 w-5" />
                 Visit Subreddit
               </a>
             </div>
@@ -336,7 +336,7 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black/50 py-8 mt-16">
+      <footer className="mt-16 bg-black/50 py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-400">
             Building the future of transportation, one block at a time.
