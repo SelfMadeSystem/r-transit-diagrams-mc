@@ -293,7 +293,7 @@ function App() {
               collaborate on amazing projects. Our community is always growing
               and welcoming new members!
             </p>
-            <div className="flex gap-4 justify-center">
+            <div className="flex gap-4 justify-center flex-wrap">
               <a
                 href="https://discord.gg/J5bhVWTEm9"
                 className="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-xl font-semibold transition-colors inline-flex items-center"
